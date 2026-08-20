@@ -6,15 +6,15 @@ public class Person {
     private boolean eating;
     private boolean driving;
 
-    public Person(String name){
+    public Person(String name) {
         this.name = name;
         this.awake = false;
         this.eating = false;
         this.driving = false;
     }
 
-    public void wakeUp(){
-        if(awake){
+    public void wakeUp() {
+        if (awake) {
             System.out.println(name + " está acordado(a)");
         } else {
             awake = true;
@@ -22,54 +22,58 @@ public class Person {
         }
     }
 
-    public void eat(){
-        if(driving){
+    public void eat() {
+        if (driving) {
             System.out.println(name + " não pode comer enquanto dirige!");
-        }else if (!awake){
+        } else if (!awake) {
             System.out.println(name + " não está acordado(a)!");
-        }else if (eating){
+        } else if (eating) {
             System.out.println(name + " já está comendo");
         } else {
             eating = true;
             System.out.println(name + " começou a comer");
         }
     }
-    public void stopEating(){
-        if(!eating){
+
+    public void stopEating() {
+        if (!eating) {
             System.out.println(name + " não está comendo no momento");
-        }else {
+        } else {
             eating = false;
             System.out.println(name + " parou de comer.");
         }
     }
-    public void drive(){
-        if(!awake){
+
+    public void drive() {
+        if (!awake) {
             System.out.println(name + " não está acordado(a)!");
-        }else if (eating){
+        } else if (eating) {
             System.out.println(name + " não deve dirigir enquanto come.");
         } else if (driving) {
             System.out.println(name + " já está dirigindo!");
-        } else  {
+        } else {
             driving = true;
             System.out.println(name + " começou a dirigir.");
         }
     }
-    public void stopDriving(){
-        if(!driving){
+
+    public void stopDriving() {
+        if (!driving) {
             System.out.println(name + " não está dirigindo.");
         } else {
             driving = false;
             System.out.println(name + " parou de dirigir.");
         }
     }
-    public void sleep(){
-        if (driving){
+
+    public void sleep() {
+        if (driving) {
             System.out.println(name + " não pode dormir enquanto dirige.");
         } else if (eating) {
             System.out.println(name + " não pode dormir enquanto come.");
         } else if (!awake) {
             System.out.println(name + " já está dormindo.");
-        } else  {
+        } else {
             awake = false;
             eating = false;
             driving = false;

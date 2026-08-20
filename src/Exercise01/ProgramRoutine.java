@@ -37,7 +37,7 @@ public class ProgramRoutine {
                 default -> System.out.println("Valor inválido, tente novamente");
             }
 
-        }while(option != 0);
+        } while (option != 0);
 
 
     }

@@ -44,14 +44,14 @@ public class BankAccount {
         this.availableBalance = Math.max(0.0, updatedBalance);
     }
 
-    public void recieveDeposit(double amount){
-        if (amount > 0){
+    public void recieveDeposit(double amount) {
+        if (amount > 0) {
             this.availableBalance += amount;
         }
     }
 
-    public boolean transfer(double amount){
-        if (amount > 0 && amount <= availableBalance){
+    public boolean transfer(double amount) {
+        if (amount > 0 && amount <= availableBalance) {
             this.availableBalance -= amount;
             return true;
         }
@@ -60,16 +60,16 @@ public class BankAccount {
     }
 
     public void setOwnerCPF(String newCPF) {
-        if (newCPF == null){
+        if (newCPF == null) {
             this.ownerCPF = "";
         } else {
-            this.ownerCPF = newCPF.replaceAll("\\D","");
+            this.ownerCPF = newCPF.replaceAll("\\D", "");
         }
         this.ownerCPF = ownerCPF;
     }
 
     public void setOwnerName(String newName) {
-        if (newName != null && !newName.isBlank()){
+        if (newName != null && !newName.isBlank()) {
             this.ownerName = ownerName;
         } else {
             this.ownerName = "Titular não informado";
@@ -77,17 +77,18 @@ public class BankAccount {
     }
 
     //Máscara para manter o CPF oculto
-    private String cpfMask(String cpfNumerOnly){
-        if (cpfNumerOnly == null || cpfNumerOnly.length() < 11 ){
+    private String cpfMask(String cpfNumerOnly) {
+        if (cpfNumerOnly == null || cpfNumerOnly.length() < 11) {
             return "** CPF inválido **";
         }
-        if (cpfNumerOnly.length() == 11){
+        if (cpfNumerOnly.length() == 11) {
             return cpfNumerOnly.substring(0, 3) + ".***.***-**";
         }
         return "***.***.***-**";
     }
+
     //Metodo para exibir as informações
-    public void showInfo(){
+    public void showInfo() {
         System.out.println("\n====== Informações Resumidas ======");
         System.out.println("Nome do Titular: " + getOwnerName());
         System.out.println("CPF do Titular: " + getOwnerCPF());

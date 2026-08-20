@@ -19,7 +19,7 @@ public class Example {
 
         double availableBalance = 0.00;
 
-        BankAccount account = new BankAccount(name,cpf,availableBalance);
+        BankAccount account = new BankAccount(name, cpf, availableBalance);
 
         account.showInfo();
 
@@ -35,7 +35,7 @@ public class Example {
 
         System.out.println("Tentativa de trnasferência acima do valor em conta no valor de R$6000.50: ");
         boolean attempt = account.transfer(6000.50);
-        if (attempt){
+        if (attempt) {
             System.out.println("Saque feito com sucesso!");
         } else {
             System.out.println("Saldo insuficiente! Transferência cancelada");
